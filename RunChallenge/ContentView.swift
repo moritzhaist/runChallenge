@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("sumOfRuns") var sumOfRuns = 0.00
+    
     var body: some View {
-        Text("Hello, world!")
+        Text(" \(String(format: "%.3f", sumOfRuns)) KM")
             .padding()
     }
 }

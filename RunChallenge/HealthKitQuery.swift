@@ -34,7 +34,13 @@ class HealthKitQuery {
                 print("Error: \(error.localizedDescription)")
                 return
             }
-            self.getSumOfRunningWorkoutsDistance { _ in
+            self.getSumOfRunningWorkoutsDistance { results in
+                guard let sumOfRuns = results else {
+                    print("There are no results")
+                    return
+                }
+                // Store results in UserDefaults
+                UserDefaults.standard.set(sumOfRuns, forKey: "sumOfRuns")
                 completionHandler()
             }
         }
