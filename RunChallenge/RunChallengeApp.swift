@@ -24,7 +24,7 @@ struct RunChallengeApp: App {
                 return
             }
             print("HealthKit successful authorized")
-            
+            HealthKitQuery.startObservingWorkoutChanges()
         }
     }
     
