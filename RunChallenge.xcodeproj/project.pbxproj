@@ -14,7 +14,36 @@
 		492E39FC25E184F100AD75A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492E39FB25E184F100AD75A3 /* HealthKit.framework */; };
 		492E39FF25E185D100AD75A3 /* HealthKitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */; };
 		492E3A0225E1889200AD75A3 /* HealthKitQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */; };
+		492E3A4925E1972300AD75A3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492E3A4825E1972300AD75A3 /* WidgetKit.framework */; };
+		492E3A4B25E1972300AD75A3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492E3A4A25E1972300AD75A3 /* SwiftUI.framework */; };
+		492E3A4E25E1972300AD75A3 /* EXTRunChallengeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3A4D25E1972300AD75A3 /* EXTRunChallengeWidget.swift */; };
+		492E3A5025E1972400AD75A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E3A4F25E1972400AD75A3 /* Assets.xcassets */; };
+		492E3A5425E1972400AD75A3 /* EXTRunChallengeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		492E3A5225E1972400AD75A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492E39DE25E1849800AD75A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 492E3A4625E1972300AD75A3;
+			remoteInfo = EXTRunChallengeWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		492E3A5525E1972400AD75A3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				492E3A5425E1972400AD75A3 /* EXTRunChallengeWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		492E39E625E1849800AD75A3 /* RunChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +56,12 @@
 		492E39FB25E184F100AD75A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetup.swift; sourceTree = "<group>"; };
 		492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitQuery.swift; sourceTree = "<group>"; };
+		492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EXTRunChallengeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		492E3A4825E1972300AD75A3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		492E3A4A25E1972300AD75A3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		492E3A4D25E1972300AD75A3 /* EXTRunChallengeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXTRunChallengeWidget.swift; sourceTree = "<group>"; };
+		492E3A4F25E1972400AD75A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		492E3A5125E1972400AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +73,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		492E3A4425E1972300AD75A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492E3A4B25E1972300AD75A3 /* SwiftUI.framework in Frameworks */,
+				492E3A4925E1972300AD75A3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				492E39E825E1849800AD75A3 /* RunChallenge */,
+				492E3A4C25E1972300AD75A3 /* EXTRunChallengeWidget */,
 				492E39E725E1849800AD75A3 /* Products */,
 				492E39FA25E184F100AD75A3 /* Frameworks */,
 			);
@@ -54,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				492E39E625E1849800AD75A3 /* RunChallenge.app */,
+				492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,8 +131,20 @@
 			isa = PBXGroup;
 			children = (
 				492E39FB25E184F100AD75A3 /* HealthKit.framework */,
+				492E3A4825E1972300AD75A3 /* WidgetKit.framework */,
+				492E3A4A25E1972300AD75A3 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		492E3A4C25E1972300AD75A3 /* EXTRunChallengeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				492E3A4D25E1972300AD75A3 /* EXTRunChallengeWidget.swift */,
+				492E3A4F25E1972400AD75A3 /* Assets.xcassets */,
+				492E3A5125E1972400AD75A3 /* Info.plist */,
+			);
+			path = EXTRunChallengeWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,15 +157,34 @@
 				492E39E225E1849800AD75A3 /* Sources */,
 				492E39E325E1849800AD75A3 /* Frameworks */,
 				492E39E425E1849800AD75A3 /* Resources */,
+				492E3A5525E1972400AD75A3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				492E3A5325E1972400AD75A3 /* PBXTargetDependency */,
 			);
 			name = RunChallenge;
 			productName = RunChallenge;
 			productReference = 492E39E625E1849800AD75A3 /* RunChallenge.app */;
 			productType = "com.apple.product-type.application";
+		};
+		492E3A4625E1972300AD75A3 /* EXTRunChallengeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 492E3A5825E1972400AD75A3 /* Build configuration list for PBXNativeTarget "EXTRunChallengeWidgetExtension" */;
+			buildPhases = (
+				492E3A4325E1972300AD75A3 /* Sources */,
+				492E3A4425E1972300AD75A3 /* Frameworks */,
+				492E3A4525E1972300AD75A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EXTRunChallengeWidgetExtension;
+			productName = EXTRunChallengeWidgetExtension;
+			productReference = 492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -119,6 +196,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					492E39E525E1849800AD75A3 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					492E3A4625E1972300AD75A3 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -137,6 +217,7 @@
 			projectRoot = "";
 			targets = (
 				492E39E525E1849800AD75A3 /* RunChallenge */,
+				492E3A4625E1972300AD75A3 /* EXTRunChallengeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +229,14 @@
 			files = (
 				492E39F125E1849900AD75A3 /* Preview Assets.xcassets in Resources */,
 				492E39EE25E1849900AD75A3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		492E3A4525E1972300AD75A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492E3A5025E1972400AD75A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +254,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		492E3A4325E1972300AD75A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492E3A4E25E1972300AD75A3 /* EXTRunChallengeWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		492E3A5325E1972400AD75A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 492E3A4625E1972300AD75A3 /* EXTRunChallengeWidgetExtension */;
+			targetProxy = 492E3A5225E1972400AD75A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		492E39F325E1849900AD75A3 /* Debug */ = {
@@ -287,6 +392,7 @@
 		492E39F625E1849900AD75A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
@@ -310,6 +416,7 @@
 		492E39F725E1849900AD75A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
@@ -330,6 +437,48 @@
 			};
 			name = Release;
 		};
+		492E3A5625E1972400AD75A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q26M52G72C;
+				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge.EXTRunChallengeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		492E3A5725E1972400AD75A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q26M52G72C;
+				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge.EXTRunChallengeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -347,6 +496,15 @@
 			buildConfigurations = (
 				492E39F625E1849900AD75A3 /* Debug */,
 				492E39F725E1849900AD75A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		492E3A5825E1972400AD75A3 /* Build configuration list for PBXNativeTarget "EXTRunChallengeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				492E3A5625E1972400AD75A3 /* Debug */,
+				492E3A5725E1972400AD75A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
