@@ -62,6 +62,7 @@
 		492E3A4D25E1972300AD75A3 /* EXTRunChallengeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXTRunChallengeWidget.swift; sourceTree = "<group>"; };
 		492E3A4F25E1972400AD75A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		492E3A5125E1972400AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		492E3A5D25E199A200AD75A3 /* EXTRunChallengeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EXTRunChallengeWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		492E39DD25E1849800AD75A3 = {
 			isa = PBXGroup;
 			children = (
+				492E3A5D25E199A200AD75A3 /* EXTRunChallengeWidgetExtension.entitlements */,
 				492E39E825E1849800AD75A3 /* RunChallenge */,
 				492E3A4C25E1972300AD75A3 /* EXTRunChallengeWidget */,
 				492E39E725E1849800AD75A3 /* Products */,
@@ -442,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q26M52G72C;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
@@ -463,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q26M52G72C;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
