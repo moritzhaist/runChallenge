@@ -12,6 +12,8 @@
 		492E39EE25E1849900AD75A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E39ED25E1849900AD75A3 /* Assets.xcassets */; };
 		492E39F125E1849900AD75A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E39F025E1849900AD75A3 /* Preview Assets.xcassets */; };
 		492E39FC25E184F100AD75A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492E39FB25E184F100AD75A3 /* HealthKit.framework */; };
+		492E39FF25E185D100AD75A3 /* HealthKitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */; };
+		492E3A0225E1889200AD75A3 /* HealthKitQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		492E39F225E1849900AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492E39F925E184F100AD75A3 /* RunChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunChallenge.entitlements; sourceTree = "<group>"; };
 		492E39FB25E184F100AD75A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetup.swift; sourceTree = "<group>"; };
+		492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				492E39ED25E1849900AD75A3 /* Assets.xcassets */,
 				492E39F225E1849900AD75A3 /* Info.plist */,
 				492E39EF25E1849900AD75A3 /* Preview Content */,
+				492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */,
+				492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */,
 			);
 			path = RunChallenge;
 			sourceTree = "<group>";
@@ -154,6 +160,8 @@
 			files = (
 				492E39EC25E1849800AD75A3 /* ContentView.swift in Sources */,
 				492E39EA25E1849800AD75A3 /* RunChallengeApp.swift in Sources */,
+				492E39FF25E185D100AD75A3 /* HealthKitSetup.swift in Sources */,
+				492E3A0225E1889200AD75A3 /* HealthKitQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
