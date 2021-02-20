@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("sumOfRuns") var sumOfRuns = 0.00
+   
+    @AppStorage("sumOfRuns", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    var sumOfRuns = 0.00
     
     var body: some View {
         Text(" \(String(format: "%.3f", sumOfRuns)) KM")

@@ -6,6 +6,7 @@
 //
 
 import HealthKit
+import WidgetKit
 
 class HealthKitQuery {
     
@@ -40,7 +41,9 @@ class HealthKitQuery {
                     return
                 }
                 // Store results in UserDefaults
-                UserDefaults.standard.set(sumOfRuns, forKey: "sumOfRuns")
+                //UserDefaults.standard.set(sumOfRuns, forKey: "sumOfRuns")
+                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRuns, forKey: "sumOfRuns")
+                WidgetCenter.shared.reloadAllTimelines()
                 completionHandler()
             }
         }
