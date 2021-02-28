@@ -19,6 +19,7 @@
 		492E3A4E25E1972300AD75A3 /* EXTRunChallengeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3A4D25E1972300AD75A3 /* EXTRunChallengeWidget.swift */; };
 		492E3A5025E1972400AD75A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E3A4F25E1972400AD75A3 /* Assets.xcassets */; };
 		492E3A5425E1972400AD75A3 /* EXTRunChallengeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49B05C2625EBC4B300424030 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B05C2525EBC4B300424030 /* WorkoutData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		492E3A4F25E1972400AD75A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		492E3A5125E1972400AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492E3A5D25E199A200AD75A3 /* EXTRunChallengeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EXTRunChallengeWidgetExtension.entitlements; sourceTree = "<group>"; };
+		49B05C2525EBC4B300424030 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				492E39F925E184F100AD75A3 /* RunChallenge.entitlements */,
 				492E39E925E1849800AD75A3 /* RunChallengeApp.swift */,
 				492E39EB25E1849800AD75A3 /* ContentView.swift */,
+				49B05C2525EBC4B300424030 /* WorkoutData.swift */,
 				492E39ED25E1849900AD75A3 /* Assets.xcassets */,
 				492E39F225E1849900AD75A3 /* Info.plist */,
 				492E39EF25E1849900AD75A3 /* Preview Content */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B05C2625EBC4B300424030 /* WorkoutData.swift in Sources */,
 				492E39EC25E1849800AD75A3 /* ContentView.swift in Sources */,
 				492E39EA25E1849800AD75A3 /* RunChallengeApp.swift in Sources */,
 				492E39FF25E185D100AD75A3 /* HealthKitSetup.swift in Sources */,

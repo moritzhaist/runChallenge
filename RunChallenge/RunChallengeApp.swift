@@ -25,12 +25,17 @@ struct RunChallengeApp: App {
             }
             print("HealthKit successful authorized")
             HealthKitQuery.startObservingWorkoutChanges()
+            
+            // Temporally store monthly challenge value - this has to be handled with userinput
+            let distanceChallenge: Double = 200
+            UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(distanceChallenge, forKey: "distanceChallenge")
+
         }
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(workoutData: WorkoutData())
         }
     }
 }
