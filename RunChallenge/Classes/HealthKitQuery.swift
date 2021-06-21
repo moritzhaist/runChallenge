@@ -35,30 +35,48 @@ class HealthKitQuery {
                 print("Error: \(error.localizedDescription)")
                 return
             }
-            self.getSumOfRunningWorkoutsDistance { results in
-                guard let sumOfRuns = results else {
+            // get sum of running workouts for current month
+            self.getSumOfRunningWorkoutsDistance(timeInterval: "currentMonth") { results in
+                guard let sumOfRunsMonth = results else {
                     print("There are no results")
                     return
                 }
                 // Store results in UserDefaults
-                //UserDefaults.standard.set(sumOfRuns, forKey: "sumOfRuns")
-                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRuns, forKey: "sumOfRuns")
+                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRunsMonth, forKey: "sumOfRunsMonth")
                 WidgetCenter.shared.reloadAllTimelines()
+                completionHandler()
+            }
+            // get total sum of running workouts for current year
+            self.getSumOfRunningWorkoutsDistance(timeInterval: "currentYear") { results in
+                guard let sumOfRunsYear = results else {
+                    print("There are no results")
+                    return
+                }
+                // Store results in UserDefaults
+                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRunsYear, forKey: "sumOfRunsYear")
                 completionHandler()
             }
         }
         healthStore.execute(observerQuery)
     }
             
-    class func getSumOfRunningWorkoutsDistance(completionHandler: @escaping (_ sample: Double?) -> Void) {
+    class func getSumOfRunningWorkoutsDistance(timeInterval: String ,completionHandler: @escaping (_ sample: Double?) -> Void) {
         
-        print("getSumOfRunningWorkoutsDistance")
+        print("getSumOfRunningWorkoutsDistance for \(timeInterval)")
+        
         let sampleType = HKObjectType.workoutType()
         let healthStore = HKHealthStore()
         let now = Date()
-        let comp: DateComponents = Calendar.current.dateComponents([.year, .month], from: now)
-        let startOfMonth = Calendar.current.date(from: comp)!
-        let timePredicate = HKQuery.predicateForSamples(withStart: startOfMonth, end: now, options: [])
+        var dateComponent = DateComponents()
+        
+        if timeInterval == "currentMonth" {
+            dateComponent = Calendar.current.dateComponents([.year, .month], from: now)
+        } else {
+            dateComponent = Calendar.current.dateComponents([.year], from: now)
+        }
+        
+        let startOfInterval = Calendar.current.date(from: dateComponent)!
+        let timePredicate = HKQuery.predicateForSamples(withStart: startOfInterval, end: now, options: [])
         let runningWorkouts = HKQuery.predicateForWorkouts(with: .running)
         let combinedPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [runningWorkouts, timePredicate])
         let sortByDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
@@ -76,7 +94,7 @@ class HealthKitQuery {
                     listOfDistances.append(Double(round(distance) / 1000))
                 }
             let sumOfRunningWorkoutsDistance = listOfDistances.reduce(0, +)
-            print("sumOfRunningWorkoutsDistance: \(sumOfRunningWorkoutsDistance)")
+            print("sumOfRunningWorkoutsDistance for \(timeInterval): \(sumOfRunningWorkoutsDistance)")
 
             completionHandler(sumOfRunningWorkoutsDistance)
         }

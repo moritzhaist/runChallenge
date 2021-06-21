@@ -10,8 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     // updated in HealthKitQuery Class
-    @AppStorage("sumOfRuns", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
-    var sumOfRuns: Double = 0.00
+    @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    var sumOfRunsMonth: Double = 0.00
+    @AppStorage("sumOfRunsYear", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    var sumOfRunsYear: Double = 0.00
     
     // updated in SettingsView
     @AppStorage("distanceChallenge", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
@@ -25,7 +27,7 @@ struct ContentView: View {
     
     
     func getChallengeProgress () -> Float {
-        return Float(sumOfRuns) / Float(distanceChallenge)
+        return Float(sumOfRunsMonth) / Float(distanceChallenge)
     }
     
     func getRemainingDays() -> Int {
@@ -83,7 +85,7 @@ struct ContentView: View {
                         .padding(20)
                         // inside circles
                         VStack {
-                            Text("\(String(format: "%.2f", self.sumOfRuns)) KM")
+                            Text("\(String(format: "%.2f", self.sumOfRunsMonth)) KM")
                                 .font(.system(size: 30.0, weight: .black, design: .default))
                                 .foregroundColor(.white)
                                 .padding(30)
@@ -97,7 +99,7 @@ struct ContentView: View {
                 // table
                 VStack {
                     VStack {
-                        HStack{
+                        HStack(alignment: .center){
                             Text("Challenge completed")
                                 .font(.caption)
                                 .foregroundColor(.white)
@@ -107,17 +109,17 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         Divider().background(Color.gray)
-                        HStack{
+                        HStack(alignment: .center){
                             Text("Kilometers left")
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(String(format: "%.2f", (self.distanceChallenge - self.sumOfRuns))) km")
+                            Text("\(String(format: "%.2f", (self.distanceChallenge - self.sumOfRunsMonth))) km")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
                         Divider().background(Color.gray)
-                        HStack{
+                        HStack(alignment: .center){
                             Text("Days left in Month")
                                 .font(.caption)
                                 .foregroundColor(.white)
@@ -127,12 +129,12 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         Divider().background(Color.gray)
-                        HStack{
+                        HStack(alignment: .center){
                             Text("Total running distance in \(String(date.get(.year)))")
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("xxx km")
+                            Text("\(String(format: "%.2f", self.sumOfRunsYear)) km")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
