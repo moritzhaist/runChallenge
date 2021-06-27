@@ -20,6 +20,7 @@ struct ContentView: View {
     var distanceChallenge: Double = 50.00
     
     @State private var showingSettings = false
+    @State private var showingInfo = false
     
     
     let date = Date()
@@ -46,7 +47,7 @@ struct ContentView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack() {
+            VStack {
                 VStack(alignment: .leading) {
                     // header
                     HStack(alignment: .top) {
@@ -148,14 +149,14 @@ struct ContentView: View {
                 // buttons
                 VStack {
                     HStack {
-                        Button(action: {showingSettings = true}) {
+                        Button(action: {showingInfo = true}) {
                             Image(systemName: "info.circle")
                                 .font(.title)
                                 .foregroundColor(.gray)
                             
                         }
-                        .sheet(isPresented: $showingSettings, content: {
-                            SettingsView(currentChallenge: self.distanceChallenge, isPresented: $showingSettings)
+                        .sheet(isPresented: $showingInfo, content: {
+                            InfoView(isPresented: $showingInfo)
                         })
                         Spacer()
                         Button(action: {showingSettings = true}) {
