@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct InfoView: View {
     
     @Binding var isPresented: Bool
+    
     
     var body: some View {
         ZStack {
@@ -45,38 +47,51 @@ struct InfoView: View {
                         }
                     }
                 }
-               
-                VStack {
-                    Text("Run Challenge was developed by Moritz Haist. If you like this app you can support me by writing a review or leave a tip.")
-                        .font(.headline)
-                        .fontWeight(.semibold)
+                ScrollView {
+                    VStack {
+                        Text("Run Challenge was developed by Moritz Haist. If you like this app you can support my work by writing a review or leave a tip.")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+                            .padding(20)
+                    }
+                    VStack {
+                        // buttons with custom actions
+                        CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,29 €", buttonFunction: self.leaveTip)
+                        CustomButton(buttonIcon: "star", buttonLabel: "Rate this app", buttonArrow: true, buttonText: nil, buttonFunction: self.askForRating)
+                        CustomButton(buttonIcon: "textformat.abc", buttonLabel: "Write a review", buttonArrow: true, buttonText: nil, buttonFunction: writeReview)
+                        // links with external targets
+                        CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "paperplane", linkName: "Support, Bug Report")
+                        CustomLink(linkUrl: "https://github.com/moritzhaist", linkIcon: "applescript", linkName: "RunChallenge on Github")
+                        CustomLink(linkUrl: "https://linktr.ee/moritzhaist", linkIcon: "message", linkName: "Contact")
+                        // app version info
+                        HStack {
+                            Image(systemName: "app.badge")
+                                .padding(.trailing)
+                            Text("Version 0.0.1")
+                            Spacer()
+                        }
                         .foregroundColor(.white)
-                        .multilineTextAlignment(.leading)
-                        .padding(20)
-                    
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "dollarsign.circle", linkName: "Buy me a coffee")
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "star", linkName: "Write a review")
+                        .padding(15)
+                        .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
+                        .cornerRadius(15)
+                        .padding(.horizontal, 20)
+                    }
                 }
-                Spacer()
-                HStack {
-                    Text("Further Information")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.leading)
-                        .padding(20)
-                    Spacer()
-                }
- 
-                VStack {
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "envelope", linkName: "Support, Bug Report")
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "icloud", linkName: "RunChallenge on Github")
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "globe", linkName: "Contact")
-                    CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "app.badge", linkName: "Version 0.0.1")
-                }
-                Spacer()
             }
         }
+    }
+    func leaveTip() {
+        print("Buy coffee pressed!")
+    }
+    func askForRating() {
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+    func writeReview() {
+        print("Write a review pressed")
     }
 }
 
@@ -96,17 +111,51 @@ struct CustomLink: View {
                 HStack {
                     Image(systemName: linkIcon)
                         .padding(.trailing)
-                        .font(.title)
+                    
                     Text(linkName)
                     Spacer()
-                    Image(systemName: "chevron.right.circle")
-                }
-                .foregroundColor(.white)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 20)
-                .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
-                .cornerRadius(15)
+                    Image(systemName: "chevron.right")                }
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
+                    .cornerRadius(15)
             }
         }
+        .padding(.horizontal, 20)
     }
+}
+
+struct CustomButton: View {
+    var buttonIcon: String
+    var buttonLabel: String
+    var buttonArrow: Bool
+    var buttonText: String?
+    var buttonFunction: () -> Void
+    var body: some View {
+        VStack {
+            Button(action: {
+                self.buttonFunction()
+            }, label: {
+                HStack {
+                    Image(systemName: buttonIcon)
+                        .padding(.trailing)
+                    
+                    Text(buttonLabel)
+                    Spacer()
+                    if buttonText != nil {
+                        Text(buttonText!)
+                    }
+                    if buttonArrow {
+                        Image(systemName: "chevron.right")
+                    }
+                }
+                .foregroundColor(.white)
+                .padding(15)
+                .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
+                .cornerRadius(15)
+            })
+        }
+        .padding(.horizontal, 20)
+    }
+
 }
