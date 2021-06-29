@@ -80,10 +80,7 @@ struct InfoView: View {
                                         print(result)
                                     }
                                 }
-                                .foregroundColor(.white)
-                                .padding(15)
-                                .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
-                                .cornerRadius(15)
+                                .modifier(ctaModifier())
                             })
                         }
                         .padding(.horizontal, 20)
@@ -97,10 +94,7 @@ struct InfoView: View {
                             Text("Version 0.0.1")
                             Spacer()
                         }
-                        .foregroundColor(.white)
-                        .padding(15)
-                        .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
-                        .cornerRadius(15)
+                        .modifier(ctaModifier())
                         .padding(.horizontal, 20)
                     }
                 }
@@ -137,10 +131,7 @@ struct CustomLink: View {
                     Text(linkName)
                     Spacer()
                     Image(systemName: "chevron.right")                }
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
-                    .cornerRadius(15)
+                    .modifier(ctaModifier())
             }
         }
         .padding(.horizontal, 20)
@@ -171,14 +162,20 @@ struct CustomButton: View {
                         Image(systemName: "chevron.right")
                     }
                 }
-                .foregroundColor(.white)
-                .padding(15)
-                .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
-                .cornerRadius(15)
+                .modifier(ctaModifier())
             })
         }
         .padding(.horizontal, 20)
         
     }
+}
 
+struct ctaModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .padding(15)
+            .background(Color("mDarkColor"))
+            .cornerRadius(15)
+    }
 }
