@@ -11,7 +11,9 @@ import StoreKit
 struct InfoView: View {
     
     @Binding var isPresented: Bool
-    
+    //data for sending email
+    @State private var mailData = ComposeMailData(subject: "[RunChallenge App]", recipients: ["runchallengeapp@bildstrich.net"], message: "", attachments: [])
+    @State private var showMailView = false
     
     var body: some View {
         ZStack {
@@ -59,10 +61,33 @@ struct InfoView: View {
                     VStack {
                         // buttons with custom actions
                         CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,29 €", buttonFunction: self.leaveTip)
-                        CustomButton(buttonIcon: "star", buttonLabel: "Rate this app", buttonArrow: true, buttonText: nil, buttonFunction: self.askForRating)
-                        CustomButton(buttonIcon: "textformat.abc", buttonLabel: "Write a review", buttonArrow: true, buttonText: nil, buttonFunction: writeReview)
+                        CustomButton(buttonIcon: "star", buttonLabel: "Rate and review this app", buttonArrow: true, buttonText: nil, buttonFunction: self.askForRating)
+                        // button for Mail View
+                        VStack {
+                            Button(action: {
+                                showMailView.toggle()
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "paperplane")
+                                        .padding(.trailing)
+                                    Text("Support, Bug Report")
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                }
+                                .disabled(!MailView.canSendMail)
+                                .sheet(isPresented: $showMailView) {
+                                    MailView(data: $mailData) { result in
+                                        print(result)
+                                    }
+                                }
+                                .foregroundColor(.white)
+                                .padding(15)
+                                .background(Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255))
+                                .cornerRadius(15)
+                            })
+                        }
+                        .padding(.horizontal, 20)
                         // links with external targets
-                        CustomLink(linkUrl: "www.bildstrich.net", linkIcon: "paperplane", linkName: "Support, Bug Report")
                         CustomLink(linkUrl: "https://github.com/moritzhaist", linkIcon: "applescript", linkName: "RunChallenge on Github")
                         CustomLink(linkUrl: "https://linktr.ee/moritzhaist", linkIcon: "message", linkName: "Contact")
                         // app version info
@@ -89,9 +114,6 @@ struct InfoView: View {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
-    }
-    func writeReview() {
-        print("Write a review pressed")
     }
 }
 
@@ -156,6 +178,7 @@ struct CustomButton: View {
             })
         }
         .padding(.horizontal, 20)
+        
     }
 
 }
