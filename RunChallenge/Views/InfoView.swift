@@ -52,10 +52,10 @@ struct InfoView: View {
                 ScrollView {
                     VStack {
                         Text("Run Challenge was developed by Moritz Haist. If you like this app you can support my work by writing a review or leave a tip.")
-                            .font(.headline)
-                            .fontWeight(.semibold)
+                            .font(.callout)
+                            .fontWeight(.thin)
                             .foregroundColor(.white)
-                            .multilineTextAlignment(.leading)
+                            .multilineTextAlignment(.center)
                             .padding(20)
                     }
                     VStack {
