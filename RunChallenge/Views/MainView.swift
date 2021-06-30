@@ -110,6 +110,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
+                        .padding(.vertical, 1)
                         Divider().background(Color.gray)
                         HStack(alignment: .center){
                             Text("Kilometers left")
@@ -120,6 +121,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
+                        .padding(.vertical, 1)
                         Divider().background(Color.gray)
                         HStack(alignment: .center){
                             Text("Days left in Month")
@@ -130,6 +132,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
+                        .padding(.vertical, 1)
                         Divider().background(Color.gray)
                         HStack(alignment: .center){
                             Text("Total running distance in \(String(date.get(.year)))")
@@ -140,9 +143,11 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
+                        .padding(.vertical, 1)
                         
                     }
-                    .padding(20)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
                     .background(Color("mDarkColor"))
                 }
                 .cornerRadius(15)
