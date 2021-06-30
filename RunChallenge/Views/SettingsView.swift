@@ -66,7 +66,7 @@ struct SettingsView: View {
                     ZStack(alignment: .center) {
                         Circle()
                             .stroke(
-                                LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hue: 0.5354012868490564, saturation: 0.45592020793133475, brightness: 1.0, opacity: 1.0), location: 0.0), Gradient.Stop(color: Color(hue: 0.5639713241393308, saturation: 1.0, brightness: 1.0, opacity: 1.0), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
+                                LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
                                 style: StrokeStyle(lineWidth: 3.0, lineCap: .round, lineJoin: .round))
                             .foregroundColor(Color.white)
                         VStack(alignment: .center) {
@@ -86,7 +86,7 @@ struct SettingsView: View {
                 VStack {
                     // distance challenge
                     ZStack {
-                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hue: 0.5354012868490564, saturation: 0.45592020793133475, brightness: 1.0, opacity: 1.0), location: 0.0), Gradient.Stop(color: Color(hue: 0.5639713241393308, saturation: 1.0, brightness: 1.0, opacity: 1.0), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading)
+                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading)
                             .mask(Slider(value: $currentChallenge, in: 0...300, step: 1))
                         Slider(value: Binding(
                             get: {
@@ -115,7 +115,7 @@ struct SettingsView: View {
                             .padding(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 40)
-                                    .stroke(LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hue: 0.5354012868490564, saturation: 0.45592020793133475, brightness: 1.0, opacity: 1.0), location: 0.0), Gradient.Stop(color: Color(hue: 0.5639713241393308, saturation: 1.0, brightness: 1.0, opacity: 1.0), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading), lineWidth: 3)
+                                    .stroke(LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading), lineWidth: 3)
                             )
                     }
                     Spacer()
