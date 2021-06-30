@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
     // updated in HealthKitQuery Class
     @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
@@ -22,11 +22,10 @@ struct ContentView: View {
     @State private var showingSettings = false
     @State private var showingInfo = false
     
-    
     let date = Date()
     let cal = Calendar(identifier: .gregorian)
     
-    
+    // methods
     func getChallengeProgress () -> Float {
         return Float(sumOfRunsMonth) / Float(distanceChallenge)
     }
@@ -41,15 +40,16 @@ struct ContentView: View {
         return (date.get(.year))
     }
     
-    
+    // view
     var body: some View {
         
         ZStack {
             Color.black
                 .ignoresSafeArea()
             VStack {
+                
+                // header
                 VStack(alignment: .leading) {
-                    // header
                     HStack(alignment: .top) {
                         Text("Your Challenge")
                             .font(.system(.largeTitle, design: .default))
@@ -77,7 +77,7 @@ struct ContentView: View {
                             Circle()
                                 .trim(from: 0.0, to: CGFloat(min(self.getChallengeProgress(), 1.0)))
                                 .stroke(
-                                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hue: 0.5354012868490564, saturation: 0.45592020793133475, brightness: 1.0, opacity: 1.0), location: 0.0), Gradient.Stop(color: Color(hue: 0.5639713241393308, saturation: 1.0, brightness: 1.0, opacity: 1.0), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
+                                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
                                     style: StrokeStyle(lineWidth: 35.0, lineCap: .round, lineJoin: .round))
                                 .rotationEffect(Angle(degrees: 270.0))
                                 .foregroundColor(Color(hue: 0.509, saturation: 1.0, brightness: 1.0))
@@ -97,6 +97,7 @@ struct ContentView: View {
                     }
                     .padding(20)
                 }
+                
                 // table
                 VStack {
                     VStack {
@@ -146,6 +147,7 @@ struct ContentView: View {
                 }
                 .cornerRadius(15)
                 .padding(20)
+                
                 // buttons
                 VStack {
                     HStack {
@@ -173,21 +175,10 @@ struct ContentView: View {
                     .padding([.top, .leading, .trailing], 20.0)
                 }
             }
-            
         }
-        
     }
 }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .previewDevice("iPhone 12 Pro Max")
-        
-    }
-}
-
+// date extension -> getRemainingDays()
 extension Date {
     func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
         return calendar.dateComponents(Set(components), from: self)
@@ -201,5 +192,14 @@ extension Date {
         return df.string(from: self)
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+            .previewDevice("iPhone 12 Pro Max")
+    }
+}
+
+
 
 

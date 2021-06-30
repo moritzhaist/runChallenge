@@ -25,17 +25,12 @@ struct RunChallengeApp: App {
             }
             print("HealthKit successful authorized")
             HealthKitQuery.startObservingWorkoutChanges()
-            
-
-            
-
         }
-        
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
