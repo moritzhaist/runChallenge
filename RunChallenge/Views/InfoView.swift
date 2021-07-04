@@ -15,6 +15,15 @@ struct InfoView: View {
     @State private var mailData = ComposeMailData(subject: "[RunChallenge App]", recipients: ["runchallengeapp@bildstrich.net"], message: "", attachments: [])
     @State private var showMailView = false
     
+    func leaveTip() {
+        print("Buy coffee pressed!")
+    }
+    func askForRating() {
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+    
     var body: some View {
         ZStack {
             Color.black
@@ -52,10 +61,10 @@ struct InfoView: View {
                 ScrollView {
                     VStack {
                         Text("Run Challenge was developed by Moritz Haist. If you like this app you can support my work by writing a review or leave a tip.")
-                            .font(.callout)
+                            .font(.body)
                             .fontWeight(.thin)
                             .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .padding(20)
                     }
                     VStack {
@@ -99,14 +108,6 @@ struct InfoView: View {
                     }
                 }
             }
-        }
-    }
-    func leaveTip() {
-        print("Buy coffee pressed!")
-    }
-    func askForRating() {
-        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
         }
     }
 }
