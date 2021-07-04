@@ -17,6 +17,16 @@ struct SettingsView: View {
         selectionFeedback.selectionChanged()
     }
     
+    func getCircleWidth() -> CGFloat{
+        return ( CGFloat(currentChallenge) / 10)
+    }
+    
+    func updateChallenge() {
+        let newChallenge = currentChallenge
+        UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(newChallenge, forKey: "distanceChallenge")
+        isPresented = false
+    }
+    
     var body: some View {
         ZStack {
             Color.black
@@ -52,7 +62,7 @@ struct SettingsView: View {
                             }
                             .padding(20)
                             Text("How many kilometers do you want to run this month?")
-                                .font(.callout)
+                                .font(.body)
                                 .fontWeight(.thin)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
@@ -67,10 +77,11 @@ struct SettingsView: View {
                         Circle()
                             .stroke(
                                 LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
-                                style: StrokeStyle(lineWidth: 3.0, lineCap: .round, lineJoin: .round))
+                                style: StrokeStyle(lineWidth: self.getCircleWidth(), lineCap: .round, lineJoin: .round))
+                            .rotationEffect(Angle(degrees: (currentChallenge) * 2))
                             .foregroundColor(Color.white)
                         VStack(alignment: .center) {
-                            Text("\(String(format: "%.0f", currentChallenge))")
+                            Text("\(String(format: "%.2f", currentChallenge))")
                                 .font(.system(size: 30.0, weight: .black, design: .default))
                                 .foregroundColor(.white)
                                 .padding(20)
@@ -123,11 +134,6 @@ struct SettingsView: View {
                 
             }
         }
-    }
-    func updateChallenge() {
-        let newChallenge = currentChallenge
-        UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(newChallenge, forKey: "distanceChallenge")
-        isPresented = false
     }
     
 }
