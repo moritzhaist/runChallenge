@@ -23,7 +23,7 @@ struct SettingsView: View {
     
     func updateChallenge() {
         let newChallenge = currentChallenge
-        UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(newChallenge, forKey: "distanceChallenge")
+        UserDefaults(suiteName: "group.com.bildstrich.net.RunChallengeApp")!.set(newChallenge, forKey: "distanceChallenge")
         isPresented = false
     }
     

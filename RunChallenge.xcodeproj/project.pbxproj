@@ -428,7 +428,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RunChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = Q26M52G72C;
+				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RunChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -436,7 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallengeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -452,7 +452,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RunChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = Q26M52G72C;
+				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RunChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -460,7 +460,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallengeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -474,14 +474,14 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q26M52G72C;
+				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge.EXTRunChallengeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallengeApp.EXTRunChallengeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -496,14 +496,14 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q26M52G72C;
+				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallenge.EXTRunChallengeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bildstrich.net.RunChallengeApp.EXTRunChallengeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

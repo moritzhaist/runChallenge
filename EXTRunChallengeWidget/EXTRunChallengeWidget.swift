@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     
-    @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var value: Double = Double()
     
     func placeholder(in context: Context) -> SimpleEntry {

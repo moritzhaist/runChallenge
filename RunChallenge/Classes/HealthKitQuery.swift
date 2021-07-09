@@ -42,7 +42,7 @@ class HealthKitQuery {
                     return
                 }
                 // Store results in UserDefaults
-                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRunsMonth, forKey: "sumOfRunsMonth")
+                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallengeApp")!.set(sumOfRunsMonth, forKey: "sumOfRunsMonth")
                 WidgetCenter.shared.reloadAllTimelines()
                 completionHandler()
             }
@@ -53,7 +53,7 @@ class HealthKitQuery {
                     return
                 }
                 // Store results in UserDefaults
-                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallenge")!.set(sumOfRunsYear, forKey: "sumOfRunsYear")
+                UserDefaults(suiteName: "group.com.bildstrich.net.RunChallengeApp")!.set(sumOfRunsYear, forKey: "sumOfRunsYear")
                 completionHandler()
             }
         }

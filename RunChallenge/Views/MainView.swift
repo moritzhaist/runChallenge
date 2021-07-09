@@ -10,13 +10,13 @@ import SwiftUI
 struct MainView: View {
     
     // updated in HealthKitQuery Class
-    @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    @AppStorage("sumOfRunsMonth", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var sumOfRunsMonth: Double = 0.00
-    @AppStorage("sumOfRunsYear", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    @AppStorage("sumOfRunsYear", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var sumOfRunsYear: Double = 0.00
     
     // updated in SettingsView
-    @AppStorage("distanceChallenge", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallenge"))
+    @AppStorage("distanceChallenge", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var distanceChallenge: Double = 50.00
     
     @State private var showingSettings = false

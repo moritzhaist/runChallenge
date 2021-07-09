@@ -8,7 +8,7 @@
 	<array/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.bildstrich.net.RunChallenge</string>
+		<string>group.com.bildstrich.net.RunChallengeApp</string>
 	</array>
 </dict>
 </plist>
