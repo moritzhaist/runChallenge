@@ -32,8 +32,7 @@ class HealthKitSetup {
         healthStore.requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
             completion(success, error)
         }
-    
+        
     }
     
 }
-
