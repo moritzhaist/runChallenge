@@ -20,6 +20,8 @@
 		492E3A5025E1972400AD75A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E3A4F25E1972400AD75A3 /* Assets.xcassets */; };
 		492E3A5425E1972400AD75A3 /* EXTRunChallengeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 492E3A4725E1972300AD75A3 /* EXTRunChallengeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4935CD4A26987ACA0089B3C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E39ED25E1849900AD75A3 /* Assets.xcassets */; };
+		4935CD4F2699DD7D0089B3C3 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935CD4E2699DD7D0089B3C3 /* Dates.swift */; };
+		4935CD502699DD7D0089B3C3 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935CD4E2699DD7D0089B3C3 /* Dates.swift */; };
 		494DD356268BA68200DB0AA3 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DD355268BA68100DB0AA3 /* MailView.swift */; };
 		497166F626826CF8007E068B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497166F526826CF8007E068B /* InfoView.swift */; };
 		49894DAD25FE33DB0033C464 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49894DAC25FE33DB0033C464 /* SettingsView.swift */; };
@@ -67,6 +69,7 @@
 		492E3A4F25E1972400AD75A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		492E3A5125E1972400AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492E3A5D25E199A200AD75A3 /* EXTRunChallengeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EXTRunChallengeWidgetExtension.entitlements; sourceTree = "<group>"; };
+		4935CD4E2699DD7D0089B3C3 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		494DD355268BA68100DB0AA3 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		497166F526826CF8007E068B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		49894DAC25FE33DB0033C464 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 				492E39FE25E185D100AD75A3 /* HealthKitSetup.swift */,
 				492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */,
 				494DD355268BA68100DB0AA3 /* MailView.swift */,
+				4935CD4E2699DD7D0089B3C3 /* Dates.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -279,6 +283,7 @@
 				49894DAD25FE33DB0033C464 /* SettingsView.swift in Sources */,
 				492E39EC25E1849800AD75A3 /* MainView.swift in Sources */,
 				492E39EA25E1849800AD75A3 /* RunChallengeApp.swift in Sources */,
+				4935CD4F2699DD7D0089B3C3 /* Dates.swift in Sources */,
 				492E39FF25E185D100AD75A3 /* HealthKitSetup.swift in Sources */,
 				497166F626826CF8007E068B /* InfoView.swift in Sources */,
 				494DD356268BA68200DB0AA3 /* MailView.swift in Sources */,
@@ -291,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492E3A4E25E1972300AD75A3 /* EXTRunChallengeWidget.swift in Sources */,
+				4935CD502699DD7D0089B3C3 /* Dates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

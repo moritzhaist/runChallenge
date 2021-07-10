@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct MainView: View {
     
@@ -14,7 +15,6 @@ struct MainView: View {
     var sumOfRunsMonth: Double = 0.00
     @AppStorage("sumOfRunsYear", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var sumOfRunsYear: Double = 0.00
-    
     // updated in SettingsView
     @AppStorage("distanceChallenge", store: UserDefaults(suiteName:"group.com.bildstrich.net.RunChallengeApp"))
     var distanceChallenge: Double = 50.00
@@ -22,27 +22,11 @@ struct MainView: View {
     @State private var showingSettings = false
     @State private var showingInfo = false
     
-    let date = Date()
-    let cal = Calendar(identifier: .gregorian)
-    
-    // methods
-    func getChallengeProgress () -> Float {
-        return Float(sumOfRunsMonth) / Float(distanceChallenge)
-    }
-    
-    func getRemainingDays() -> Int {
-        let monthRange = cal.range(of: .day, in: .month, for: date)!
-        let daysInMonth = monthRange.count
-        return daysInMonth - (date.get(.day))
-    }
-    
-    func getYear() -> Int {
-        return (date.get(.year))
-    }
+    let dates = Dates()
     
     // view
     var body: some View {
-        
+        let challengeProgress = Float(sumOfRunsMonth) / Float(distanceChallenge)
         ZStack {
             Color.black
                 .ignoresSafeArea()
@@ -57,7 +41,7 @@ struct MainView: View {
                             .foregroundColor(.white)
                         Spacer()
                     }
-                    Text("\(date.monthAsString()) \(String(date.get(.year)))")
+                    Text("\(dates.date.monthAsString()) \(String(dates.date.get(.year)))")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
                     
@@ -75,7 +59,7 @@ struct MainView: View {
                                 .foregroundColor(Color.blue)
                             // progress circle
                             Circle()
-                                .trim(from: 0.0, to: CGFloat(min(self.getChallengeProgress(), 1.0)))
+                                .trim(from: 0.0, to: CGFloat(min(challengeProgress, 1.0)))
                                 .stroke(
                                     LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
                                     style: StrokeStyle(lineWidth: 35.0, lineCap: .round, lineJoin: .round))
@@ -106,7 +90,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(String(format: "%.1f", (self.getChallengeProgress() * 100))) %")
+                            Text("\(String(format: "%.1f", (challengeProgress * 100))) %")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
@@ -128,14 +112,14 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(self.getRemainingDays()) days")
+                            Text("\(dates.getRemainingDays()) days")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
                         .padding(.vertical, 1)
                         Divider().background(Color.gray)
                         HStack(alignment: .center){
-                            Text("Total running distance in \(String(date.get(.year)))")
+                            Text("Total running distance in \(String(dates.date.get(.year)))")
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
@@ -183,20 +167,7 @@ struct MainView: View {
         }
     }
 }
-// date extension -> getRemainingDays()
-extension Date {
-    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
-        return calendar.dateComponents(Set(components), from: self)
-    }
-    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
-        return calendar.component(component, from: self)
-    }
-    func monthAsString() -> String {
-        let df = DateFormatter()
-        df.setLocalizedDateFormatFromTemplate("LLLL")
-        return df.string(from: self)
-    }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
