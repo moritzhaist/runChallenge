@@ -50,5 +50,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>RunChallenge needs your permission to have access to your Workout data stored in Healthkit.</string>
 </dict>
 </plist>
