@@ -100,7 +100,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(String(format: "%.2f", (self.distanceChallenge - self.sumOfRunsMonth))) km")
+                            Text("\(String(format: "%.2f", (self.distanceChallenge - self.sumOfRunsMonth))) KM")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
@@ -122,7 +122,7 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(String(format: "%.2f", self.sumOfRunsYear)) km")
+                            Text("\(String(format: "%.2f", self.sumOfRunsYear)) KM")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
