@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SettingsView: View {
     
@@ -24,6 +25,7 @@ struct SettingsView: View {
     func updateChallenge() {
         let newChallenge = currentChallenge
         UserDefaults(suiteName: "group.com.bildstrich.net.RunChallengeApp")!.set(newChallenge, forKey: "distanceChallenge")
+        WidgetCenter.shared.reloadAllTimelines()
         isPresented = false
     }
     
