@@ -64,7 +64,6 @@ struct MainView: View {
                                     LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
                                     style: StrokeStyle(lineWidth: 35.0, lineCap: .round, lineJoin: .round))
                                 .rotationEffect(Angle(degrees: 270.0))
-                                .foregroundColor(Color(hue: 0.509, saturation: 1.0, brightness: 1.0))
                                 .animation(Animation.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0).delay(1))
                         }
                         .padding(20)
