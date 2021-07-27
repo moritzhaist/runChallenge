@@ -15,9 +15,9 @@ struct InfoView: View {
     @State private var mailData = ComposeMailData(subject: "[RunChallenge App]", recipients: ["runchallengeapp@bildstrich.net"], message: "", attachments: [])
     @State private var showMailView = false
     
-    func leaveTip() {
-        print("Buy coffee pressed!")
-    }
+   // func leaveTip() {
+        //print("Buy coffee pressed!")
+    //}
     
     func askForRating() {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -70,7 +70,7 @@ struct InfoView: View {
                     }
                     VStack {
                         // buttons with custom actions
-                        CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,09 €", buttonFunction: self.leaveTip)
+                       // CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,09 €", buttonFunction: self.leaveTip)
                         CustomButton(buttonIcon: "star", buttonLabel: "Rate and review this app", buttonArrow: true, buttonText: nil, buttonFunction: self.askForRating)
                         // button for Mail View
                         VStack {
