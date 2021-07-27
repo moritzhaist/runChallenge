@@ -17,11 +17,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>RunChallenge needs access to your Healthkit Workouts. No other data will be used.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>RunChallenge needs your permission to have access to your Workout data stored in Healthkit.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -50,7 +52,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>RunChallenge needs your permission to have access to your Workout data stored in Healthkit.</string>
 </dict>
 </plist>
