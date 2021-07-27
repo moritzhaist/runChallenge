@@ -165,7 +165,7 @@ struct RunChallengeWidgetEntryView : View {
                             .padding(.vertical, 0.5)
                             Divider().background(Color.gray)
                             HStack(alignment: .center){
-                                Text("Total KM")
+                                Text("Total distance \(String(dates.date.get(.year)))")
                                     .font(.caption)
                                     .foregroundColor(.white)
                                 Spacer()
