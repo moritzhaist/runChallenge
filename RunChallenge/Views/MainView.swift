@@ -35,7 +35,7 @@ struct MainView: View {
                 // header
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
-                        Text("Your Challenge")
+                        Text("Your current Challenge")
                             .font(.system(.largeTitle, design: .default))
                             .fontWeight(.black)
                             .foregroundColor(.white)
