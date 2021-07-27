@@ -107,7 +107,7 @@ struct MainView: View {
                         .padding(.vertical, 1)
                         Divider().background(Color.gray)
                         HStack(alignment: .center){
-                            Text("Days left in Month")
+                            Text("Days left in month")
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
