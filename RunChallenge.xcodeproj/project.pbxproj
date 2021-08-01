@@ -510,6 +510,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidget/EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,6 +533,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidget/EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
