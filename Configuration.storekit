@@ -1,0 +1,33 @@
+{
+  "identifier" : "BF076299",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1,09",
+      "familyShareable" : false,
+      "internalID" : "F7D2D1AC",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.bildstrich.net.RunChallengeApp.IAP.TipJar",
+      "referenceName" : "RunChallenge TipJar",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
