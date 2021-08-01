@@ -116,6 +116,7 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView(isPresented: .constant(true))
+            .environment(\.locale, .init(identifier: "de"))
     }
 }
 
@@ -130,7 +131,7 @@ struct CustomLink: View {
                     Image(systemName: linkIcon)
                         .padding(.trailing)
                     
-                    Text(linkName)
+                    Text(LocalizedStringKey(linkName))
                     Spacer()
                     Image(systemName: "chevron.right")                }
                     .modifier(ctaModifier())
@@ -155,7 +156,7 @@ struct CustomButton: View {
                     Image(systemName: buttonIcon)
                         .padding(.trailing)
                     
-                    Text(buttonLabel)
+                    Text(LocalizedStringKey(buttonLabel))
                     Spacer()
                     if buttonText != nil {
                         Text(buttonText!)
