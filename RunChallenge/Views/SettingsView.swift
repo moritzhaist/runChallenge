@@ -154,7 +154,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView(currentChallenge: 150.0, isPresented: .constant(true))
-                .environment(\.locale, .init(identifier: "de"))
             
         }
     }
