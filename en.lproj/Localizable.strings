@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  RunChallenge
+
+  Created by Moritz Haist on 11.07.21.
+  
+*/
+
+// Main View
+"Your current Challenge" = "Your current Challenge";
+
+"Challenge completed" = "Challenge completed";
+
+"Kilometers left" = "Kilometers left";
+
+"Days left in month" = "Days left in Month";
+
+"Total running distance in %@" = "Total running distance in %@";
+
+"days" = "days";
+
+// Settings View
+"Set your" = "Set your";
+
+"Challenge" = "Challenge";
+
+"How many kilometers do you want to run this month?" = "How many kilometers do you want to run this month?";
+
+"Set challenge" = "Set challenge";
+
+//Info View
+"Run Challenge was developed by Moritz Haist. If you like this app you can support my work by writing a review or leave a tip." = "Run Challenge was developed by Moritz Haist. If you like this app you can support my work by writing a review or leave a tip.";
+
+"Rate and review this app" = "Rate and review this app";
+
+"Support, Bug Report" = "Support, Bug Report";
+
+"RunChallenge on Github" = "RunChallenge on Github";
+
+"Buy me a coffee" = "Buy me a coffee";
+
+"Contact" = "Contact";
+
+// Widget
+"Challenge" = "Challenge";
+
+"KM left" = "KM left";
+
+"Days left" = "Days left";
+
+"Total distance %@" = "Total distance %@";
