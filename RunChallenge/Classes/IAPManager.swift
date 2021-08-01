@@ -8,12 +8,9 @@
 import Foundation
 import StoreKit
 
-
-
 class IAPManager: NSObject {
     
     private let allTicketIdentifiers: Set<String> = ["com.bildstrich.net.RunChallengeApp.IAP.TipJar"]
-    
     static let shared = IAPManager()
     
     private override init() {
@@ -40,6 +37,7 @@ class IAPManager: NSObject {
         return SKPaymentQueue.canMakePayments()
     }
 }
+
 
 extension IAPManager: SKProductsRequestDelegate, SKRequestDelegate {
     
