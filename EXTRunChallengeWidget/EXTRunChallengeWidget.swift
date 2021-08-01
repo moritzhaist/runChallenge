@@ -132,7 +132,7 @@ struct RunChallengeWidgetEntryView : View {
                         // Table
                         VStack {
                             HStack(alignment: .center){
-                                Text("Goal")
+                                Text("Challenge")
                                     .font(.caption)
                                     .foregroundColor(.white)
                                 Spacer()
@@ -158,14 +158,14 @@ struct RunChallengeWidgetEntryView : View {
                                     .font(.caption)
                                     .foregroundColor(.white)
                                 Spacer()
-                                Text("\(dates.getRemainingDays()) days")
+                                Text("\(dates.getRemainingDays())")
                                     .font(.caption)
                                     .foregroundColor(.white)
                             }
                             .padding(.vertical, 0.5)
                             Divider().background(Color.gray)
                             HStack(alignment: .center){
-                                Text("Total distance \(String(dates.date.get(.year)))")
+                                Text("Total \(String(dates.date.get(.year)))")
                                     .font(.caption)
                                     .foregroundColor(.white)
                                 Spacer()
@@ -214,5 +214,6 @@ struct EXTRunChallengeWidget_Previews: PreviewProvider {
     static var previews: some View {
         RunChallengeWidgetEntryView(entry: SimpleEntry(date: Date(), value: 120.00, distance: 200.00, yearProgress: 1200))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .environment(\.locale, .init(identifier: "de"))
     }
 }
