@@ -22,9 +22,12 @@
 		4935CD4A26987ACA0089B3C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492E39ED25E1849900AD75A3 /* Assets.xcassets */; };
 		4935CD4F2699DD7D0089B3C3 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935CD4E2699DD7D0089B3C3 /* Dates.swift */; };
 		4935CD502699DD7D0089B3C3 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935CD4E2699DD7D0089B3C3 /* Dates.swift */; };
+		493B70F526B581DC00C52AFC /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B70F426B581DC00C52AFC /* IAPManager.swift */; };
 		494DD356268BA68200DB0AA3 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DD355268BA68100DB0AA3 /* MailView.swift */; };
 		497166F626826CF8007E068B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497166F526826CF8007E068B /* InfoView.swift */; };
 		49894DAD25FE33DB0033C464 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49894DAC25FE33DB0033C464 /* SettingsView.swift */; };
+		49D80B0526B6DB9D002F9B5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D80B0826B6DB9D002F9B5D /* Localizable.strings */; };
+		49D80B0626B6DB9D002F9B5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D80B0826B6DB9D002F9B5D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +73,13 @@
 		492E3A5125E1972400AD75A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492E3A5D25E199A200AD75A3 /* EXTRunChallengeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EXTRunChallengeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		4935CD4E2699DD7D0089B3C3 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		493B70F326B5813E00C52AFC /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		493B70F426B581DC00C52AFC /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		494DD355268BA68100DB0AA3 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		497166F526826CF8007E068B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		49894DAC25FE33DB0033C464 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		49D80B0726B6DB9D002F9B5D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49D80B0926B6DBBA002F9B5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +106,7 @@
 		492E39DD25E1849800AD75A3 = {
 			isa = PBXGroup;
 			children = (
+				493B70F326B5813E00C52AFC /* Configuration.storekit */,
 				492E39E825E1849800AD75A3 /* RunChallenge */,
 				492E3A4C25E1972300AD75A3 /* EXTRunChallengeWidget */,
 				492E39E725E1849800AD75A3 /* Products */,
@@ -125,6 +133,7 @@
 				492E39E925E1849800AD75A3 /* RunChallengeApp.swift */,
 				492E39F925E184F100AD75A3 /* RunChallenge.entitlements */,
 				492E39F225E1849900AD75A3 /* Info.plist */,
+				49D80B0826B6DB9D002F9B5D /* Localizable.strings */,
 			);
 			path = RunChallenge;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				492E3A0125E1889200AD75A3 /* HealthKitQuery.swift */,
 				494DD355268BA68100DB0AA3 /* MailView.swift */,
 				4935CD4E2699DD7D0089B3C3 /* Dates.swift */,
+				493B70F426B581DC00C52AFC /* IAPManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,6 +252,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 492E39DD25E1849800AD75A3;
 			productRefGroup = 492E39E725E1849800AD75A3 /* Products */;
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492E39F125E1849900AD75A3 /* Preview Assets.xcassets in Resources */,
+				49D80B0526B6DB9D002F9B5D /* Localizable.strings in Resources */,
 				492E39EE25E1849900AD75A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4935CD4A26987ACA0089B3C3 /* Assets.xcassets in Resources */,
+				49D80B0626B6DB9D002F9B5D /* Localizable.strings in Resources */,
 				492E3A5025E1972400AD75A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493B70F526B581DC00C52AFC /* IAPManager.swift in Sources */,
 				49894DAD25FE33DB0033C464 /* SettingsView.swift in Sources */,
 				492E39EC25E1849800AD75A3 /* MainView.swift in Sources */,
 				492E39EA25E1849800AD75A3 /* RunChallengeApp.swift in Sources */,
@@ -309,6 +323,18 @@
 			targetProxy = 492E3A5225E1972400AD75A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49D80B0826B6DB9D002F9B5D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D80B0726B6DB9D002F9B5D /* de */,
+				49D80B0926B6DBBA002F9B5D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		492E39F325E1849900AD75A3 /* Debug */ = {
@@ -435,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"RunChallenge/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				ENABLE_PREVIEWS = YES;
@@ -460,7 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RunChallenge/RunChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"RunChallenge/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				ENABLE_PREVIEWS = YES;
@@ -484,6 +510,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidget/EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -506,6 +533,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EXTRunChallengeWidget/EXTRunChallengeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4C3X5A9SU9;
 				INFOPLIST_FILE = EXTRunChallengeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,7 +545,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

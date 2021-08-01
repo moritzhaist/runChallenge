@@ -15,9 +15,11 @@ struct InfoView: View {
     @State private var mailData = ComposeMailData(subject: "[RunChallenge App]", recipients: ["runchallengeapp@bildstrich.net"], message: "", attachments: [])
     @State private var showMailView = false
     
-   // func leaveTip() {
-        //print("Buy coffee pressed!")
-    //}
+    @ObservedObject var products = ProductsDB.shared
+    
+    func leaveTip() {
+        let _ = IAPManager.shared.purchase(product: self.products.items[0])
+    }
     
     func askForRating() {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -70,7 +72,10 @@ struct InfoView: View {
                     }
                     VStack {
                         // buttons with custom actions
-                       // CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,09 €", buttonFunction: self.leaveTip)
+                        CustomButton(buttonIcon: "eurosign.circle", buttonLabel: "Buy me a coffee", buttonArrow: false, buttonText: "1,09 €", buttonFunction: self.leaveTip)
+                            .onAppear {
+                                IAPManager.shared.getProducts()
+                            }
                         CustomButton(buttonIcon: "star", buttonLabel: "Rate and review this app", buttonArrow: true, buttonText: nil, buttonFunction: self.askForRating)
                         // button for Mail View
                         VStack {
@@ -101,7 +106,7 @@ struct InfoView: View {
                         HStack {
                             Image(systemName: "app.badge")
                                 .padding(.trailing)
-                            Text("Version 1.0.0 beta 2")
+                            Text("Version 1.0.0 beta 3")
                             Spacer()
                         }
                         .modifier(ctaModifier())
@@ -116,6 +121,7 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView(isPresented: .constant(true))
+            .environment(\.locale, .init(identifier: "de"))
     }
 }
 
@@ -130,7 +136,7 @@ struct CustomLink: View {
                     Image(systemName: linkIcon)
                         .padding(.trailing)
                     
-                    Text(linkName)
+                    Text(LocalizedStringKey(linkName))
                     Spacer()
                     Image(systemName: "chevron.right")                }
                     .modifier(ctaModifier())
@@ -155,7 +161,7 @@ struct CustomButton: View {
                     Image(systemName: buttonIcon)
                         .padding(.trailing)
                     
-                    Text(buttonLabel)
+                    Text(LocalizedStringKey(buttonLabel))
                     Spacer()
                     if buttonText != nil {
                         Text(buttonText!)
