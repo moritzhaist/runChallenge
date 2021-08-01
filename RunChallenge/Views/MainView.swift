@@ -111,7 +111,8 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(dates.getRemainingDays()) days")
+                           
+                            Text("\(dates.getRemainingDays())")
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
@@ -172,6 +173,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .previewDevice("iPhone 12 Pro Max")
+            .environment(\.locale, .init(identifier: "de"))
     }
 }
 
