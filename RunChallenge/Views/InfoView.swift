@@ -106,7 +106,7 @@ struct InfoView: View {
                         HStack {
                             Image(systemName: "app.badge")
                                 .padding(.trailing)
-                            Text("Version 1.0.0 beta 3")
+                            Text("Version 1.0.1")
                             Spacer()
                         }
                         .modifier(ctaModifier())
