@@ -100,13 +100,13 @@ struct InfoView: View {
                         }
                         .padding(.horizontal, 20)
                         // links with external targets
-                        CustomLink(linkUrl: "https://github.com/moritzhaist", linkIcon: "applescript", linkName: "RunChallenge on Github")
+                        CustomLink(linkUrl: "https://github.com/moritzhaist/runChallenge", linkIcon: "applescript", linkName: "RunChallenge on Github")
                         CustomLink(linkUrl: "https://linktr.ee/moritzhaist", linkIcon: "message", linkName: "Contact")
                         // app version info
                         HStack {
                             Image(systemName: "app.badge")
                                 .padding(.trailing)
-                            Text("Version 1.0.1")
+                            Text("Version 1.0.2")
                             Spacer()
                         }
                         .modifier(ctaModifier())
