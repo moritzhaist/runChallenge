@@ -122,6 +122,7 @@ struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView(isPresented: .constant(true))
             .environment(\.locale, .init(identifier: "de"))
+            .previewDevice("iPhone 8 Plus")
     }
 }
 
