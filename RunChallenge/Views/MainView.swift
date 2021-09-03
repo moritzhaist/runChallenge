@@ -26,16 +26,19 @@ struct MainView: View {
     
     // view
     var body: some View {
+        
         let challengeProgress = Float(sumOfRunsMonth) / Float(distanceChallenge)
+        
+        // complete view
         ZStack {
             Color.black
                 .ignoresSafeArea()
+            // complete container
             VStack {
-                
                 // header
                 VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        Text("Your current Challenge")
+                    HStack {
+                        Text("Your Challenge")
                             .font(.system(.largeTitle, design: .default))
                             .fontWeight(.black)
                             .foregroundColor(.white)
@@ -44,45 +47,48 @@ struct MainView: View {
                     Text("\(dates.date.monthAsString()) \(String(dates.date.get(.year)))")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
-                    
                 }
-                .padding(20)
-                
-                // circles
-                HStack {
-                    ZStack {
+                .padding([.top, .leading, .trailing], 20)
+                Spacer()
+                // content block
+                VStack {
+                    Spacer()
+                    // circles
+                    HStack {
                         ZStack {
-                            // full circle
-                            Circle()
-                                .stroke(lineWidth: 35.0)
-                                .opacity(0.3)
-                                .foregroundColor(Color.blue)
-                            // progress circle
-                            Circle()
-                                .trim(from: 0.0, to: CGFloat(min(challengeProgress, 1.0)))
-                                .stroke(
-                                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
-                                    style: StrokeStyle(lineWidth: 35.0, lineCap: .round, lineJoin: .round))
-                                .rotationEffect(Angle(degrees: 270.0))
-                                .animation(Animation.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0).delay(1))
-                        }
-                        .padding(20)
-                        // inside circles
-                        VStack {
-                            Text("\(String(format: "%.2f", self.sumOfRunsMonth)) KM")
-                                .font(.system(size: 30.0, weight: .black, design: .default))
-                                .foregroundColor(.white)
-                                .padding(30)
-                            Text("\(String(format: "%.0f", self.distanceChallenge)) KM")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 20.0, weight: .regular, design: .default))
+                            ZStack {
+                                // full circle
+                                Circle()
+                                    .stroke(lineWidth: 35.0)
+                                    .opacity(0.3)
+                                    .foregroundColor(Color.blue)
+                                    .frame(width: UIScreen.main.bounds.width - 120, height: UIScreen.main.bounds.width - 120)
+                                    .padding()
+                                // progress circle
+                                Circle()
+                                    .trim(from: 0.0, to: CGFloat(min(challengeProgress, 1.0)))
+                                    .stroke(
+                                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("mLightBlue"), location: 0.0), Gradient.Stop(color: Color("mDarkBlue"), location: 0.9990679227388822)]), startPoint: UnitPoint.bottomTrailing, endPoint: UnitPoint.topLeading),
+                                        style: StrokeStyle(lineWidth: 35.0, lineCap: .round, lineJoin: .round))
+                                    .rotationEffect(Angle(degrees: 270.0))
+                                    .animation(Animation.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0).delay(1))
+                                    .frame(width: UIScreen.main.bounds.width - 120, height: UIScreen.main.bounds.width - 120)
+                                    .padding()
+                            }
+                            // inside circles
+                            VStack {
+                                Text("\(String(format: "%.2f", self.sumOfRunsMonth)) KM")
+                                    .font(.system(size: 28.0, weight: .black, design: .default))
+                                    .foregroundColor(.white)
+                                .padding(20)
+                                Text("\(String(format: "%.0f", self.distanceChallenge)) KM")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 20.0, weight: .regular, design: .default))
+                            }
                         }
                     }
-                    .padding(20)
-                }
-                
-                // table
-                VStack {
+                    Spacer()
+                    // table
                     VStack {
                         HStack(alignment: .center){
                             Text("Challenge completed")
@@ -126,17 +132,15 @@ struct MainView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
-                        .padding(.vertical, 1)
-                        
                     }
-                    .padding(.horizontal, 15)
+                    .padding(.horizontal, 10)
                     .padding(.vertical, 10)
                     .background(Color("mDarkColor"))
+                    .cornerRadius(15)
+                    Spacer()
                 }
-                .cornerRadius(15)
-                .padding(20)
-                
-                // buttons
+                .padding([.leading, .trailing], 20)
+                // footer
                 VStack {
                     HStack {
                         Button(action: {showingInfo = true}) {
@@ -159,9 +163,8 @@ struct MainView: View {
                             SettingsView(currentChallenge: self.distanceChallenge, isPresented: $showingSettings)
                         })
                     }
-                    
-                    .padding([.top, .leading, .trailing], 20.0)
                 }
+                .padding([.leading, .trailing], 20)
             }
         }
     }
@@ -171,10 +174,6 @@ struct MainView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .previewDevice("iPhone 12 Pro Max")
-            .environment(\.locale, .init(identifier: ""))    }
+            .previewDevice("iPhone SE (2nd generation)")
+            .environment(\.locale, .init(identifier: "en"))    }
 }
-
-
-
-
