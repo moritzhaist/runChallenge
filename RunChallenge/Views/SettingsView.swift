@@ -39,7 +39,6 @@ struct SettingsView: View {
                     ZStack(alignment: .topLeading) {
                         Image("settingsViewHeader16-9")
                             .resizable()
-                            .scaledToFit()
                             .overlay(ImageOverlay().opacity(0.7))
                         // headline / closebutton / text
                         VStack {
@@ -68,7 +67,6 @@ struct SettingsView: View {
                                 .fontWeight(.thin)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
-                                .padding(20)
                         }
                     }
                 }
@@ -154,8 +152,8 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView(currentChallenge: 150.0, isPresented: .constant(true))
-                .environment(\.locale, .init(identifier: ""))
-            
+                .environment(\.locale, .init(identifier: "en"))
+                .previewDevice("iPhone 8 Plus")
         }
     }
 }

@@ -174,6 +174,6 @@ struct MainView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .previewDevice("iPhone SE (2nd generation)")
+            .previewDevice("iPhone 8 Plus")
             .environment(\.locale, .init(identifier: "en"))    }
 }
